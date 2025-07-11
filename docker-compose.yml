@@ -2,8 +2,8 @@
 services:
   yamcs:
     image: madhutelugu/tm2s:latest
-    hostname: yamcs
-    container_name: yamcs-prod
+    hostname: mcc
+    container_name: mcc
     env_file:
       - .env
     healthcheck:
