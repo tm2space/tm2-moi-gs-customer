@@ -1,10 +1,7 @@
 
 services:
   yamcs:
-    build: 
-      context: .
-      dockerfile: Dockerfile
-      target: runtime
+    image: madhutelugu/tm2s:latest
     hostname: yamcs
     container_name: yamcs-prod
     env_file:
