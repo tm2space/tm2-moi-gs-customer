@@ -17,9 +17,9 @@ cp .env.example .env
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `ADMIN_PASSWORD` | Admin password for Yamcs interface | `your_secure_admin_password_here` |
-| `{CUSTOMER}_HOST` | Customer instance hostname/IP | `customer_replaceable_value` |
-| `{CUSTOMER}_TM_PORT` | Customer telemetry port | `customer_replaceable_value` |
-| `{CUSTOMER}_TC_PORT` | Customer telecommand port | `customer_replaceable_value` |
+| `{CUSTOMER}_HOST` | Customer instance hostname/IP | `<OBC_IP_ADDRESS>` |
+| `{CUSTOMER}_TM_PORT` | Customer telemetry port (YAMCS) | `<YAMCS_PORT>` |
+| `{CUSTOMER}_TC_PORT` | Customer telecommand port (OBC) | `<OBC_PORT>` |
 | `YAMCS_PORT` | Port for Yamcs HTTP server | `8090` |
 | `YAMCS_HOST` | Host address for Yamcs HTTP server | `0.0.0.0` |
 
