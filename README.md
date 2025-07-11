@@ -31,12 +31,17 @@ cp .env.example .env
    cp .env.example .env
    ```
 
-2. Edit the `.env` file with your configuration values:
+2. Create the required persistent directories:
+   ```sh
+   mkdir -p data/yamcs-data data/yamcs-logs data/yamcs-cache
+   ```
+
+3. Edit the `.env` file with your configuration values:
    ```sh
    vim .env
    ```
 
-3. Run the system using Docker Compose:
+4. Run the system using Docker Compose:
    ```sh
    docker-compose up
    ```
