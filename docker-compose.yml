@@ -1,7 +1,10 @@
 
 services:
   yamcs:
-    image: tm2space/yamcs:latest
+    build: 
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
     hostname: yamcs
     container_name: yamcs-prod
     env_file:

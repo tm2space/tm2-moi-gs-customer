@@ -16,9 +16,15 @@ cp .env.example .env
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `OBC_HOST` | Hostname/IP address for OBC connection | `localhost` |
-| `OBC_TM_PORT` | Port for receiving OBC telemetry | `10015` |
-| `OBC_TC_PORT` | Port for sending OBC telecommands | `10014` |
+| `OBC_HOST` | Hostname/IP address for OBC connection (Legacy) | `localhost` |
+| `OBC_TM_PORT` | Port for receiving OBC telemetry (Legacy) | `10015` |
+| `OBC_TC_PORT` | Port for sending OBC telecommands (Legacy) | `10014` |
+| `MOI_HOST` | MOI-1 instance hostname/IP | `localhost` |
+| `MOI_TM_PORT` | MOI-1 telemetry port | `10015` |
+| `MOI_TC_PORT` | MOI-1 telecommand port | `10014` |
+| `ORBITAID_HOST` | OrbitAid-2025 hostname/IP | `localhost` |
+| `ORBITAID_TM_PORT` | OrbitAid-2025 telemetry port | `10016` |
+| `ORBITAID_TC_PORT` | OrbitAid-2025 telecommand port | `10017` |
 | `YAMCS_PORT` | Port for Yamcs HTTP server | `8090` |
 | `YAMCS_HOST` | Host address for Yamcs HTTP server | `0.0.0.0` |
 
