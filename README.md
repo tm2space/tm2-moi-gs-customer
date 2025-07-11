@@ -16,15 +16,10 @@ cp .env.example .env
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `OBC_HOST` | Hostname/IP address for OBC connection (Legacy) | `localhost` |
-| `OBC_TM_PORT` | Port for receiving OBC telemetry (Legacy) | `10015` |
-| `OBC_TC_PORT` | Port for sending OBC telecommands (Legacy) | `10014` |
-| `MOI_HOST` | MOI-1 instance hostname/IP | `localhost` |
-| `MOI_TM_PORT` | MOI-1 telemetry port | `10015` |
-| `MOI_TC_PORT` | MOI-1 telecommand port | `10014` |
-| `ORBITAID_HOST` | OrbitAid-2025 hostname/IP | `localhost` |
-| `ORBITAID_TM_PORT` | OrbitAid-2025 telemetry port | `10016` |
-| `ORBITAID_TC_PORT` | OrbitAid-2025 telecommand port | `10017` |
+| `ADMIN_PASSWORD` | Admin password for Yamcs interface | `your_secure_admin_password_here` |
+| `{CUSTOMER}_HOST` | Customer instance hostname/IP | `customer_replaceable_value` |
+| `{CUSTOMER}_TM_PORT` | Customer telemetry port | `customer_replaceable_value` |
+| `{CUSTOMER}_TC_PORT` | Customer telecommand port | `customer_replaceable_value` |
 | `YAMCS_PORT` | Port for Yamcs HTTP server | `8090` |
 | `YAMCS_HOST` | Host address for Yamcs HTTP server | `0.0.0.0` |
 
@@ -77,9 +72,9 @@ Default Login Credentials: admin/admin
 
 ## Telecommanding
 
-This project defines a few example CCSDS telecommands. They are received on UDP port `10014`. Commands have no side effects and are used for testing the telecommand interface.
+This project defines a few example CCSDS telecommands. They are received on configurable UDP ports. Commands have no side effects and are used for testing the telecommand interface.
 
-The system also receives telemetry packets on UDP port `10015` at a configurable rate (default 1Hz) from your OBC or simulator.
+The system also receives telemetry packets at configurable rates from your customer instances or simulators.
 
 ## Configuration Examples
 
@@ -92,7 +87,7 @@ cp .env.example .env
 docker-compose up
 ```
 
-This will connect to OBC at `localhost:10015` (telemetry) and `localhost:10014` (commands), with Yamcs running on `localhost:8090`.
+This will connect to customer instances with their configured ports, with Yamcs running on `localhost:8090`.
 
 ### Running with Custom Configuration
 
@@ -110,12 +105,13 @@ Then run with Docker Compose:
 docker-compose up
 ```
 
-Example `.env` file for connecting to a remote OBC:
+Example `.env` file for connecting to a remote customer instance:
 
 ```sh
-OBC_HOST="192.168.1.100"
-OBC_TM_PORT="1235"
-OBC_TC_PORT="1234"
+{CUSTOMER}_HOST="192.168.1.100"
+{CUSTOMER}_TM_PORT="1235"
+{CUSTOMER}_TC_PORT="1234"
 YAMCS_PORT="8090"
 YAMCS_HOST="0.0.0.0"
+ADMIN_PASSWORD="your_secure_password"
 ```
