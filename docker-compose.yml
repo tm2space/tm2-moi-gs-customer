@@ -1,6 +1,7 @@
+
 services:
   yamcs:
-    image: madhutelugu/tm2s:latest
+    image: tm2space/yamcs:latest
     hostname: yamcs
     container_name: yamcs-prod
     env_file:
@@ -26,11 +27,7 @@ services:
     networks:
       - yamcs-network
     restart: unless-stopped
-    security_opt:
-      - no-new-privileges:true
     read_only: false
-    tmpfs:
-      - /yamcs/tmp:exec,nosuid,size=100m,uid=1000,gid=1000
     deploy:
       resources:
         limits:
