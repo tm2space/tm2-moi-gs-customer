@@ -67,7 +67,7 @@ Once running, you can access the Yamcs web interface at:
 
 ```
 URL: http://localhost:8090/
-Default Login Credentials: admin/admin
+Default Login Credentials: admin/<ADMIN_PASSWORD>
 ```
 
 ## Telecommanding
