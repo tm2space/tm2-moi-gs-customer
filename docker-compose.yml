@@ -1,7 +1,7 @@
 
 services:
   yamcs:
-    image: madhutelugu/tm2s:latest
+    image: takeme2space/mcc:latest
     hostname: mcc
     container_name: mcc
     env_file:
